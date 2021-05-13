@@ -1,28 +1,75 @@
-- const randomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
-- const SECTIONS = ['HOME', 'ABOUT', 'CONTACT', 'WORK']
-nav.menu(style=`--hue: ${Math.random() * 360}`)
-  input(type='checkbox', id='menu-toggle', class='menu__toggle')
-  label(for='menu-toggle', class='menu__toggle-label')
-  label(for='menu-toggle', class='menu__toggle-label menu__toggle-label--closer')
-    svg.menu__icon(preserveAspectRatio='xMinYMin', viewBox='0 0 24 24')
-      path(d='M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z')
-    svg.menu__icon(preserveAspectRatio='xMinYMin', viewBox='0 0 24 24')
-      path(d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z')
-  ul.menu__content
-    li.menu__item(style=`--x: ${randomInRange(15, 35)}; --y: ${randomInRange(15, 25)};`)
-      a.menu__link(href="#HOME") HOME
-    li.menu__item(style=`--x: ${randomInRange(45, 75)}; --y: ${randomInRange(25, 40)};`)
-      a.menu__link(href="#ABOUT") ABOUT
-    li.menu__item(style=`--x: ${randomInRange(15, 35)}; --y: ${randomInRange(45, 75)};`)
-      a.menu__link(href="#CONTACT") CONTACT
-    li.menu__item(style=`--x: ${randomInRange(65, 75)}; --y: ${randomInRange(50, 75)};`)
-      a.menu__link(href="#WORK") WORK
-main
-  for SECTION in SECTIONS
-    section(id=SECTION)= SECTION
-svg(style='position: absolute; left: 100%')
-  defs
-    filter(id=`goo`)
-      feGaussianBlur(in='SourceGraphic', stdDeviation='15', result='BLUR')
-      feColorMatrix(in='BLUR', mode='matrix', values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7', result='GOO')
-      feBlend(in='SourceGraphic', in2=`goo`)
+<html>
+  <head>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="area"></div>
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <a href="http://justinfarrow.com">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text"> Dashboard </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-laptop fa-2x"></i>
+            <span class="nav-text"> Stars Components </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-list fa-2x"></i>
+            <span class="nav-text"> Forms </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-folder-open fa-2x"></i>
+            <span class="nav-text"> Pages </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-bar-chart-o fa-2x"></i>
+            <span class="nav-text"> Graphs and Statistics </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-font fa-2x"></i>
+            <span class="nav-text"> Quotes </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-table fa-2x"></i>
+            <span class="nav-text"> Tables </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-map-marker fa-2x"></i>
+            <span class="nav-text"> Maps </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-info fa-2x"></i>
+            <span class="nav-text"> Documentation </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="logout">
+        <li>
+          <a href="#">
+            <i class="fa fa-power-off fa-2x"></i>
+            <span class="nav-text"> Logout </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>
